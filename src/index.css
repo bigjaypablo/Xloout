@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .metric-bar-bg {
+    @apply bg-gray-200 rounded-full h-1.5 w-full;
+  }
+  .metric-bar-fill {
+    @apply h-1.5 rounded-full transition-all duration-700;
+  }
+  .badge-pill {
+    @apply bg-blue-50 text-blue-700 border border-blue-100 px-3 py-1 rounded-full text-xs flex items-center gap-1 font-medium;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}

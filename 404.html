@@ -2,14 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>𝕏loout</title>
+  <title>𝕏-Kloout</title>
   <script type="text/javascript">
-    var pathSegments = window.location.pathname.split('/');
-    var repoName = pathSegments[1];
-    window.location.href = window.location.origin + '/' + repoName + '/index.html' + window.location.search;
+    // Redirect all 404s to index.html with the path as a hash
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var hash = window.location.hash;
+    window.location.href = '/' + path + search + hash;
   </script>
 </head>
 <body>
-  Redirecting...
+  <p>Redirecting...</p>
 </body>
 </html>

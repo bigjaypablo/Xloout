@@ -41,7 +41,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/xloout.git
+git clone https://github.com/bigjaypablo/xloout.git
 cd xloout
 
 # Install dependencies

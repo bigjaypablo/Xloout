@@ -9,16 +9,16 @@ const CTA = () => {
         <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-3xl p-12 sm:p-16 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-          
+
           <div className="relative">
             <Sparkles size={32} className="mx-auto mb-4 text-yellow-400" />
             <h2 className="text-3xl sm:text-4xl font-bold">Discover your influence</h2>
             <p className="text-blue-100 mt-3 max-w-md mx-auto">
-              Join 12,000+ Web3 creators who've already claimed their Xloout Score.
+              Join 12,000+ Web3 creators who've already claimed their 𝕏-Kloout Score.
             </p>
             <Link to="/connect">
               <button className="mt-8 bg-white text-blue-600 px-10 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all hover:scale-105 inline-flex items-center gap-2 shadow-2xl">
-                Get Your Xloout Score <ArrowRight size={18} />
+                Get Your 𝕏-Kloout Score <ArrowRight size={18} />
               </button>
             </Link>
             <div className="mt-4 text-xs text-blue-200">

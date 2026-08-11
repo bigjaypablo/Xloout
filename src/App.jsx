@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ProblemSection from './components/ProblemSection';
@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Connect from './pages/Connect';
 import Dashboard from './pages/Dashboard';
 import AuthCallback from './pages/AuthCallback';
+import MobileDebugger from './components/MobileDebugger';
 
 function HomePage() {
   return (
@@ -31,13 +32,14 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Xloout">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/connect" element={<Connect />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/auth/x/callback" element={<AuthCallback />} />
       </Routes>
+      <MobileDebugger />
     </Router>
   );
 }

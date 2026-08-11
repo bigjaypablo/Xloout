@@ -1,6 +1,13 @@
 import React from 'react';
-import { Check, Award, TrendingUp, ArrowRight, Twitter, Wallet, User } from 'lucide-react';
+import { Check, Award, TrendingUp, ArrowRight, Wallet, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+// Custom 𝕏 icon
+const XIcon = ({ size = 16, className = "" }) => (
+  <span className={`font-bold ${className}`} style={{ fontSize: size }}>
+    𝕏
+  </span>
+);
 
 const SuccessScreen = ({ userData }) => {
   const twitterUsername = userData?.twitter?.username || '@CryptoNomad';
@@ -10,21 +17,19 @@ const SuccessScreen = ({ userData }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl w-full">
-        {/* Success Animation */}
         <div className="text-center">
           <div className="w-24 h-24 mx-auto bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mb-6 animate-bounce">
             <Check size={48} className="text-white" />
           </div>
           
           <h1 className="text-4xl font-extrabold text-gray-900">
-            Your <span className="text-black">𝕏loout</span> Score is Ready!
+            Your <span className="text-black">𝕏-Kloout</span> Score is Ready!
           </h1>
           <p className="text-gray-600 mt-3 max-w-md mx-auto">
             We've analyzed your social presence and on-chain activity to create your personalized influence score.
           </p>
         </div>
 
-        {/* Score Display */}
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 mt-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -32,7 +37,7 @@ const SuccessScreen = ({ userData }) => {
                 <Award size={24} className="text-blue-600" />
               </div>
               <div>
-                <div className="text-sm text-gray-500">Xloout Score</div>
+                <div className="text-sm text-gray-500">𝕏-Kloout Score</div>
                 <div className="text-3xl font-bold text-blue-600">92</div>
               </div>
             </div>
@@ -63,7 +68,7 @@ const SuccessScreen = ({ userData }) => {
 
           <div className="flex flex-wrap items-center gap-4 mt-6 pt-6 border-t border-gray-100">
             <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Twitter size={16} className="text-blue-400" />
+              <XIcon size={16} className="text-blue-400" />
               {twitterUsername}
             </div>
             <div className="w-px h-6 bg-gray-200 hidden sm:block"></div>
@@ -71,19 +76,9 @@ const SuccessScreen = ({ userData }) => {
               <Wallet size={16} className="text-purple-400" />
               {walletEns || walletAddress}
             </div>
-            {walletEns && (
-              <>
-                <div className="w-px h-6 bg-gray-200 hidden sm:block"></div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <User size={16} className="text-green-400" />
-                  {walletEns}
-                </div>
-              </>
-            )}
           </div>
         </div>
 
-        {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-4 mt-8">
           <Link to="/dashboard" className="flex-1">
             <button className="w-full bg-blue-600 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-blue-700 transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20">

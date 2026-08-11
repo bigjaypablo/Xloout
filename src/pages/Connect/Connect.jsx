@@ -5,6 +5,13 @@ import SuccessScreen from './components/SuccessScreen';
 import XConnectionService from '../../services/xConnection';
 import WalletConnectionService from '../../services/walletConnection';
 
+// Custom 𝕏 icon
+const XIcon = ({ size = 20, className = "" }) => (
+  <span className={`font-bold ${className}`} style={{ fontSize: size }}>
+    𝕏
+  </span>
+);
+
 const Connect = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isConnected, setIsConnected] = useState({
@@ -20,7 +27,7 @@ const Connect = () => {
     {
       title: 'Connect X',
       description: 'Link your X account to analyze your social presence',
-      icon: Twitter,
+      icon: XIcon,
       color: 'text-blue-600',
       isComplete: isConnected.twitter
     },
@@ -57,7 +64,6 @@ const Connect = () => {
   };
 
   const handleGenerateScore = () => {
-    // Simulate score generation with connected data
     setCurrentStep(3);
   };
 
@@ -67,7 +73,6 @@ const Connect = () => {
     }
   };
 
-  // If all steps complete, show success
   if (currentStep === 3) {
     return <SuccessScreen userData={userData} />;
   }
@@ -75,7 +80,6 @@ const Connect = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full text-xs font-medium text-blue-700 mb-4">
             <Sparkles size={14} /> Get Started
@@ -84,11 +88,10 @@ const Connect = () => {
             Connect Your Accounts
           </h1>
           <p className="text-gray-600 mt-3 max-w-md mx-auto">
-            Link your X account and wallet to discover your <span className="font-semibold text-black">𝕏loout</span> Score
+            Link your X account and wallet to discover your <span className="font-semibold text-black">𝕏-Kloout</span> Score
           </p>
         </div>
 
-        {/* Steps Progress */}
         <div className="flex justify-between items-center mb-12 max-w-md mx-auto">
           {steps.map((step, index) => (
             <div key={index} className="flex items-center">
@@ -100,6 +103,8 @@ const Connect = () => {
               `}>
                 {step.isComplete ? (
                   <Check size={20} />
+                ) : typeof step.icon === 'function' ? (
+                  <step.icon size={20} />
                 ) : (
                   <step.icon size={20} />
                 )}
@@ -115,16 +120,14 @@ const Connect = () => {
           ))}
         </div>
 
-        {/* Step Content */}
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12">
           {currentStep === 0 && (
             <ConnectStep
               title="Connect Your X Account"
               description="We'll analyze your social presence, engagement quality, and audience authenticity."
-              icon={Twitter}
+              icon={XIcon}
               color="text-blue-600"
               buttonText="Connect X"
-              buttonIcon={Twitter}
               onConnect={handleConnectTwitter}
               isConnected={isConnected.twitter}
               connectionType="twitter"
@@ -138,7 +141,6 @@ const Connect = () => {
               icon={Wallet}
               color="text-purple-600"
               buttonText="Connect Wallet"
-              buttonIcon={Wallet}
               onConnect={handleConnectWallet}
               isConnected={isConnected.wallet}
               connectionType="wallet"
@@ -152,7 +154,7 @@ const Connect = () => {
               </div>
               <h2 className="text-2xl font-bold text-gray-900">Generate Your Score</h2>
               <p className="text-gray-600 mt-3 max-w-md mx-auto">
-                Our AI will analyze your social signals and on-chain activity to create your personalized <span className="font-semibold text-black">𝕏loout</span> Score.
+                Our AI will analyze your social signals and on-chain activity to create your personalized <span className="font-semibold text-black">𝕏-Kloout</span> Score.
               </p>
               <button
                 onClick={handleGenerateScore}
@@ -164,7 +166,6 @@ const Connect = () => {
           )}
         </div>
 
-        {/* Navigation */}
         <div className="flex justify-between mt-6 max-w-md mx-auto">
           <button
             onClick={handleBack}

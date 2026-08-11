@@ -1,7 +1,7 @@
 import React from 'react';
 import { AlertCircle, Users, Eye, BarChart3 } from 'lucide-react';
 
-const ProblemSection = () => {
+const ProblemSolution = () => {
   const problems = [
     { icon: Users, title: 'Fake Engagement', desc: '42% of influencers have bot followers' },
     { icon: Eye, title: 'Vanity Metrics', desc: 'Likes and follows don\'t equal influence' },
@@ -62,4 +62,4 @@ const ProblemSection = () => {
   );
 };
 
-export default ProblemSection;
+export default ProblemSolution;

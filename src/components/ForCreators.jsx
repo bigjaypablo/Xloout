@@ -1,5 +1,6 @@
 import React from 'react';
 import { TrendingUp, Award, ShieldCheck, Sparkles, ArrowRight, Users, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ForCreators = () => {
   const benefits = [
@@ -9,14 +10,14 @@ const ForCreators = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" id="creators">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">For creators</span>
             <h2 className="text-3xl font-bold mt-3 text-gray-900">Prove your influence. Get discovered.</h2>
             <p className="text-gray-600 mt-4 leading-relaxed">
-              Stop being judged by follower count. Show projects your real impact with a verified Xloout Score.
+              Stop being judged by follower count. Show projects your real impact with a verified 𝕏-Kloout Score.
             </p>
             <div className="space-y-4 mt-6">
               {benefits.map((item, i) => (
@@ -29,9 +30,11 @@ const ForCreators = () => {
                 </div>
               ))}
             </div>
-            <button className="bg-blue-600 text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all hover:scale-105 mt-8 flex items-center gap-2 shadow-lg shadow-blue-600/20">
-              Join as a creator <ArrowRight size={16} />
-            </button>
+            <Link to="/connect">
+              <button className="bg-blue-600 text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all hover:scale-105 mt-8 flex items-center gap-2 shadow-lg shadow-blue-600/20">
+                Join as a creator <ArrowRight size={16} />
+              </button>
+            </Link>
           </div>
 
           <div className="bg-gray-50 p-6 rounded-2xl shadow-lg border border-gray-100">

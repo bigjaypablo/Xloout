@@ -1,5 +1,6 @@
 import React from 'react';
 import { Trophy, Medal, TrendingUp, Star, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Leaderboard = () => {
   const leaders = [
@@ -11,12 +12,12 @@ const Leaderboard = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" id="leaderboard">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">Top creators</span>
           <h2 className="text-3xl font-bold mt-2 text-gray-900">Leaderboard</h2>
-          <p className="text-gray-600 mt-2">The most influential Web3 creators ranked by Xloout Score</p>
+          <p className="text-gray-600 mt-2">The most influential Web3 creators ranked by 𝕏-Kloout Score</p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden max-w-3xl mx-auto">
@@ -26,7 +27,7 @@ const Leaderboard = () => {
             <div className="col-span-3 text-right">Score</div>
             <div className="col-span-2 text-right">Change</div>
           </div>
-          
+
           {leaders.map((item) => (
             <div key={item.rank} className="grid grid-cols-12 gap-2 px-6 py-4 border-b border-gray-100 items-center hover:bg-blue-50/50 transition">
               <div className="col-span-2 flex items-center gap-2">
@@ -42,11 +43,13 @@ const Leaderboard = () => {
               </div>
             </div>
           ))}
-          
+
           <div className="px-6 py-4 text-center border-t border-gray-100">
-            <button className="text-sm font-medium text-blue-600 hover:text-blue-800 transition flex items-center justify-center gap-1 mx-auto">
-              View full rankings <ArrowRight size={14} />
-            </button>
+            <Link to="/leaderboard">
+              <button className="text-sm font-medium text-blue-600 hover:text-blue-800 transition flex items-center justify-center gap-1 mx-auto">
+                View full rankings <ArrowRight size={14} />
+              </button>
+            </Link>
           </div>
         </div>
       </div>
